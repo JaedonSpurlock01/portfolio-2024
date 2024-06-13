@@ -6,13 +6,21 @@ const Contact = () => {
     <section className="max-content-width">
       <Title>Contact Me</Title>
 
-      <p className="text-gray-700 dark:text-white/80 mt-4">
-        Please contact me directly at{" "}
-        <a className="underline" href="mailto:jaedonaspurlock@outlook.com">
-          jaedonaspurlock@outlook.com
-        </a>{" "}
-        or through this form.
-      </p>
+      <div className="text-gray-700 dark:text-white/80 mt-4">
+        <p className="font-semibold">
+          Email:{" "}
+          <a
+            className="underline font-normal text-[#4183C4]"
+            href="mailto:jaedonaspurlock@outlook.com"
+          >
+            jaedonaspurlock@outlook.com
+          </a>
+          <br />
+          Phone: <span className="font-normal">+1 (760) 450 - 3906</span>
+          <br /> <br />
+        </p>
+        Or through this form,
+      </div>
 
       <form className="mt-10 flex flex-col">
         <input

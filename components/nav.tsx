@@ -16,7 +16,7 @@ const Nav = () => {
           <li
             key={index}
             className={clsx(
-              "text-xl text-neutral-700 border-b-2 hover:text-[#4183C4]",
+              "md:text-xl text-neutral-700 border-b-2 hover:text-[#4183C4]",
               activeSection === link.name
                 ? "font-bold border-neutral-700"
                 : "font-medium border-transparent"

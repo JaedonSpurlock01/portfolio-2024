@@ -2,14 +2,15 @@ import React from "react";
 import { Title } from "./headings";
 import { data } from "@/lib/data";
 
-const skillsSectionStyle = "flex flex-row items-center flex-wrap gap-2";
+const skillsSectionStyle =
+  "flex flex-row items-center justify-center md:justify-start flex-wrap gap-2";
 
 const Skills = () => {
   return (
     <section className="max-content-width flex flex-col gap-4">
       <Title>Skills</Title>
 
-      <div>
+      <div className="flex flex-col items-center md:items-start">
         <h2 className="font-medium text-neutral-700">Languages</h2>
         <div className={skillsSectionStyle}>
           {data.skills.languages.map((language, index) => (
@@ -18,7 +19,7 @@ const Skills = () => {
         </div>
       </div>
 
-      <div>
+      <div className="flex flex-col items-center md:items-start">
         <h2 className="font-medium text-neutral-700">Technologies</h2>
         <div className={skillsSectionStyle}>
           {data.skills.technologies.map((tech, index) => (
@@ -27,7 +28,7 @@ const Skills = () => {
         </div>
       </div>
 
-      <div>
+      <div className="flex flex-col items-center md:items-start">
         <h2 className="font-medium text-neutral-700">Tools & Services</h2>
         <div className={skillsSectionStyle}>
           {data.skills.tools.map((tool, index) => (
@@ -36,7 +37,7 @@ const Skills = () => {
         </div>
       </div>
 
-      <div>
+      <div className="flex flex-col items-center md:items-start">
         <h2 className="font-medium text-neutral-700">Practices</h2>
         <div className={skillsSectionStyle}>
           {data.skills.practices.map((practice, index) => (
