@@ -10,10 +10,10 @@ export const links = [
     name: "Education",
     ref: "/education",
   },
-  {
-    name: "Gallery",
-    ref: "/gallery",
-  },
+  // {
+  //   name: "Gallery",
+  //   ref: "/gallery",
+  // },
   {
     name: "Interests",
     ref: "/interests",
@@ -67,7 +67,7 @@ export const data = {
   ],
   education: {
     school: "California State University, San Marcos",
-    degree: "Bachelor of Science in Software Engineering",
+    degree: "Bachelors of Science in Software Engineering",
     gpa: "3.95/4.00",
     date: "Aug 2022 - Present",
   },
@@ -207,4 +207,57 @@ export const data = {
       term: "Fall 2024",
     },
   ],
+  interests: {
+    physical: [
+      {
+        name: "Hiking",
+        description:
+          "Inherited from tradition, hiking has been one of the core ways my family have connected with nature. It's something that I sincerely enjoy, and something I continue to pass onto further generations.",
+      },
+      {
+        name: "Skiing",
+        description:
+          "Skiing is a recreational and competitive sport where individuals glide over snow on skis, navigating slopes and terrain with varying degrees of difficulty.",
+      },
+      {
+        name: "Biking",
+        description:
+          "Biking is a versatile and eco-friendly activity that combines exercise and transportation, offering a fun way to explore the outdoors while improving physical fitness.",
+      },
+      {
+        name: "Gym",
+        description:
+          "A gym is a facility equipped with a variety of exercise machines, free weights, and spaces for group fitness classes designed to help individuals improve their physical fitness and overall health.",
+      },
+    ],
+    hobbies: [
+      {
+        name: "Books",
+        description:
+          "I enjoy the fantasy genre, as it opens to vast visual cues for imagination. Some of my favorite series are The Witcher, Shadow Slave, and The Maze Runner",
+      },
+      {
+        name: "Music",
+        description:
+          "Everyone loves music, who doesn't? I mostly enjoy soundtrack-based music, especially from artists such as Thomas Bergensen and Ivan Torrent.",
+      },
+      {
+        name: "Cubes",
+        description:
+          "I've enjoyed competing with rubik's cubes since I was young, ranging from 2x2 up to 5x5, but I mostly mess with the 3x3.",
+      },
+    ],
+    games: [
+      {
+        name: "Valheim",
+        description:
+          "From the entrancing black forests, to the peaks of the crystaline mountains. The challenges of Odin's tyrants are fierce and exhilerating. Valheim is one of, if not, the best survival game ever made. ",
+      },
+      {
+        name: "Terraria",
+        description:
+          "The iconic melodies of the forest biome singing along the adventures of the avatar. From the deep trenches of the crimson forest, to the deep oceans, Terraria is something you'll play once, and will never forget about it.",
+      },
+    ],
+  },
 };

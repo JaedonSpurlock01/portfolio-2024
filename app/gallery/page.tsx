@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Gallery() {
   return (
-    <main className="w-full h-full flex flex-col items-center justify-center pt-10 sm:py-28 gap-16 px-4 sm:px-0">
+    <main className="page-layout">
       <Hero />
       <Nav />
       Gallery

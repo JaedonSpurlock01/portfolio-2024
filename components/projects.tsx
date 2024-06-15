@@ -84,7 +84,7 @@ const Projects = () => {
               <p className="text-neutral-500 text-sm">{project.description}</p>
             </div>
 
-            <Link href="/">
+            <Link href={project.link}>
               <span className="text-neutral-600 font-medium text-sm flex flex-row items-center gap-2 hover:text-[#4183C4] hover:underline">
                 View Details <FaExternalLinkAlt />
               </span>
