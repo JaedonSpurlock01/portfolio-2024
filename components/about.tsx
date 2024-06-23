@@ -5,7 +5,7 @@ import { data } from "@/lib/data";
 const About = () => {
   return (
     <section className="max-content-width">
-      <Title>About Me</Title>
+      <Title>Hey there! 👋🏻</Title>
       <p className="mt-4 text-neutral-500">{data.about}</p>
     </section>
   );

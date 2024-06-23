@@ -1,12 +1,20 @@
+import { cn } from "@/lib/utils";
 import React from "react";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface TitleProps {
   children: React.ReactNode;
+  center?: boolean;
 }
 
-export const Title: React.FC<TitleProps> = ({ children }) => {
+export const Title: React.FC<TitleProps> = ({ children, center }) => {
   return (
-    <h1 className="text-3xl font-semibold text-neutral-700 w-full text-center sm:text-start">
+    <h1
+      className={cn(
+        "text-3xl font-semibold text-neutral-700 w-full text-center flex flex-row items-center gap-2",
+        center ? "sm:text-center justify-center" : "sm:text-start"
+      )}
+    >
       {children}
     </h1>
   );
@@ -28,6 +36,7 @@ interface ProjectTitleProps {
   team: string[];
   tools: string[];
   disciplines: string[];
+  links?: string[];
 }
 
 export const ProjectTitle: React.FC<ProjectTitleProps> = ({
@@ -38,20 +47,23 @@ export const ProjectTitle: React.FC<ProjectTitleProps> = ({
   team,
   tools,
   disciplines,
+  links,
 }) => {
   return (
-    <section className="max-content-width">
+    <>
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
-      <p className="my-8 text-sm text-neutral-800">{description}</p>
+      <p className="my-8 text-sm text-neutral-800 text-center sm:text-left">
+        {description}
+      </p>
 
-      <div className="flex flex-row flex-wrap justify-between sm:grid-cols-4 mb-10 text-sm">
-        <div>
+      <div className="flex flex-row flex-wrap justify-between sm:grid-cols-4 mb-20 text-sm">
+        <div className="mr-2">
           <span className="font-semibold text-neutral-800">Timeline</span>
           <p className="text-neutral-700">{timeline}</p>
         </div>
 
-        <div>
+        <div className="mx-2">
           <span className="font-semibold text-neutral-800">Team</span>
           {team.map((member, index) => (
             <p key={index} className="text-neutral-700">
@@ -60,7 +72,7 @@ export const ProjectTitle: React.FC<ProjectTitleProps> = ({
           ))}
         </div>
 
-        <div>
+        <div className="mx-2">
           <span className="font-semibold text-neutral-800">Tools</span>
           {tools.map((tool, index) => (
             <p key={index} className="text-neutral-700">
@@ -69,7 +81,7 @@ export const ProjectTitle: React.FC<ProjectTitleProps> = ({
           ))}
         </div>
 
-        <div>
+        <div className="mx-2">
           <span className="font-semibold text-neutral-800">Disciplines</span>
           {disciplines.map((discipline, index) => (
             <p key={index} className="text-neutral-700">
@@ -77,7 +89,18 @@ export const ProjectTitle: React.FC<ProjectTitleProps> = ({
             </p>
           ))}
         </div>
+
+        {links && (
+          <div className="ml-2">
+            <span className="font-semibold text-neutral-800">Links</span>
+            {links.map((link, index) => (
+              <a key={index} href={link} target="_blank">
+                <p className="text-neutral-700">{link}</p>
+              </a>
+            ))}
+          </div>
+        )}
       </div>
-    </section>
+    </>
   );
 };

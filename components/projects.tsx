@@ -1,8 +1,13 @@
 import React from "react";
 import { Title } from "./headings";
-import { FaGithub } from "react-icons/fa6";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaArrowRightLong, FaGithub } from "react-icons/fa6";
+import {
+  FaArrowRight,
+  FaExternalLinkAlt,
+  FaLocationArrow,
+} from "react-icons/fa";
 import Link from "next/link";
+import { CiLocationArrow1 } from "react-icons/ci";
 
 const temp_projects = [
   {
@@ -22,7 +27,7 @@ const temp_projects = [
       "Real estate website built for college students. It helps find students the listing deals and find roommates.",
   },
   {
-    name: "GDSC-CSUSM Website",
+    name: "GDSC Website",
     deployed: false,
     link: "/gdsc",
     githubLink: "https://github.com/jaedonspurlock01/routify",
@@ -46,7 +51,7 @@ const temp_projects = [
       "Contributed to the creation of a robotic car powered by raspberry pi with C++ and the ROS library.",
   },
   {
-    name: "SDR Image Processing",
+    name: "SDR Signals",
     deployed: true,
     link: "/",
     githubLink: "",
@@ -60,36 +65,35 @@ const Projects = () => {
     <section className="max-content-width">
       <Title>Projects</Title>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-2 mt-4">
+      <div className="w-full flex flex-col gap-2 mt-4">
         {temp_projects.map((project, index) => (
-          <div
-            key={index}
-            className="border border-neutral-300 rounded-md p-3 h-[15rem] flex flex-col justify-between"
-          >
-            <div>
-              <span className="flex flex-row items-center gap-2">
-                <h1 className="text-neutral-600 font-semibold">
-                  {project.name}
-                </h1>
-                {project.deployed && (
-                  <div className="w-2 h-2 rounded-full bg-green-600" />
-                )}
-                <a href={project.githubLink} target="_blank">
-                  <FaGithub
-                    className="text-neutral-600 hover:text-[#4183C4] transition-colors"
-                    size={20}
-                  />
-                </a>
-              </span>
-              <p className="text-neutral-500 text-sm">{project.description}</p>
-            </div>
+          <Link key={index} href={project.link}>
+            <div className="group border bg-neutral-50 rounded-sm p-3 h-[6rem] flex flex-row items-center gap-4">
+              <div className="h-full">
+                <span className="flex flex-row items-center gap-2">
+                  <h1 className="text-neutral-600 font-semibold">
+                    {project.name}
+                  </h1>
+                  {project.deployed && (
+                    <div className="w-2 h-2 rounded-full bg-green-600" />
+                  )}
+                  <a href={project.githubLink} target="_blank">
+                    <FaGithub
+                      className="text-neutral-600 hover:text-[#4183C4] transition-colors"
+                      size={20}
+                    />
+                  </a>
+                </span>
+                <p className="text-neutral-500 text-sm">
+                  {project.description}
+                </p>
+              </div>
 
-            <Link href={project.link}>
-              <span className="text-neutral-600 font-medium text-sm flex flex-row items-center gap-2 hover:text-[#4183C4] hover:underline">
-                View Details <FaExternalLinkAlt />
+              <span className="text-neutral-600 font-medium text-sm flex flex-row items-center gap-2 transition-all group-hover:scale-110 group-hover:text-[#4183C4] hover:underline">
+                <FaExternalLinkAlt size={15} />
               </span>
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
     </section>

@@ -19,7 +19,7 @@ const Experience = () => {
               </h2>
             </span>
 
-            <p className="text-neutral-500 text-sm md:text-base md:w-1/2">
+            <p className="text-neutral-500 text-sm md:text-base">
               {experience.description}
             </p>
           </div>

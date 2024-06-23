@@ -9,7 +9,7 @@ interface SocialProps {
 const Social: React.FC<SocialProps> = ({ icon: Icon, link }) => {
   return (
     <a href={link} target="_blank">
-      <div className="flex items-center justify-center border p-2 rounded-lg border-neutral-300 hover:bg-neutral-300 transition-all text-neutral-400">
+      <div className="flex items-center bg-neutral-50 justify-center border p-2 rounded-sm hover:bg-neutral-300 transition-all text-neutral-400">
         <Icon size={25} />
       </div>
     </a>

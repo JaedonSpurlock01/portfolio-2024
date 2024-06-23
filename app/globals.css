@@ -82,7 +82,7 @@
   }
   
   .max-content-width {
-    @apply w-full md:max-w-[90%] xl:max-w-[60%] 2xl:max-w-[850px];
+    @apply w-full md:max-w-[90%] xl:max-w-[60%] 2xl:max-w-[700px];
   }
 
   .page-layout {

@@ -13,8 +13,8 @@ const Interests = () => {
       <Title>Hobbies</Title>
       <ActivityGrid activities={data.interests.hobbies} />
 
-      <Title>Video Games</Title>
-      <ActivityGrid activities={data.interests.games} />
+      {/* <Title>Video Games</Title>
+      <ActivityGrid activities={data.interests.games} /> */}
     </section>
   );
 };
