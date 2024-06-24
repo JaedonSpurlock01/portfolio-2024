@@ -11,7 +11,7 @@ export const Title: React.FC<TitleProps> = ({ children, center }) => {
   return (
     <h1
       className={cn(
-        "text-3xl font-semibold text-neutral-700 w-full text-center flex flex-row items-center gap-2",
+        "text-3xl font-semibold text-foreground w-full text-center flex flex-row items-center gap-2",
         center ? "sm:text-center justify-center" : "sm:text-start"
       )}
     >
@@ -22,7 +22,7 @@ export const Title: React.FC<TitleProps> = ({ children, center }) => {
 
 export const Subtitle: React.FC<TitleProps> = ({ children }) => {
   return (
-    <h2 className="text-2xl font-semibold text-neutral-600 w-full text-center sm:text-start">
+    <h2 className="text-2xl font-semibold text-foreground/75 w-full text-center sm:text-start">
       {children}
     </h2>
   );

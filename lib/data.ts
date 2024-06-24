@@ -7,16 +7,20 @@ export const links = [
     ref: "/",
   },
   {
-    name: "Education",
-    ref: "/education",
+    name: "Blog",
+    ref: "/blog",
+  },
+  {
+    name: "Projects",
+    ref: "/projects",
   },
   // {
-  //   name: "Gallery",
-  //   ref: "/gallery",
+  //   name: "Interests",
+  //   ref: "/interests",
   // },
   {
-    name: "Interests",
-    ref: "/interests",
+    name: "Education",
+    ref: "/education",
   },
 ] as const;
 
@@ -24,8 +28,12 @@ export const data = {
   name: "Jaedon Spurlock",
   role: "Software Engineering",
   location: "San Diego County, California",
+  url: "https://localhost:3000",
   about:
     "I’m a Software Engineer with experience in Web Development and Embedded Systems. I am focused on the implementation of high-quality software through standard industry practices with powerful CI/CD pipelines. I am passionate about developing unique solutions to problems in the industry with simple, but engaging artifacts.",
+  links: {
+    github: "https://github.com/JaedonSpurlock01",
+  },
   socials: [
     {
       icon: MdOutlineEmail,

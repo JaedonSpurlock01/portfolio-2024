@@ -7,12 +7,12 @@ const iconStyle = "hover:text-[#4183C4] hover:cursor-pointer transition";
 const Footer = () => {
   return (
     <footer>
-      <div className="w-full h-12 bg-neutral-200 flex flex-col items-center justify-center">
+      <div className="w-full h-12 bg-secondary flex flex-col items-center justify-center">
         <div className="max-content-width flex flex-row items-center justify-between">
-          <span className="text-neutral-600 font-semibold text-xs px-2 md:px-0">
+          <span className="text-foreground/90 font-semibold text-xs px-2 md:px-0">
             © 2024 Jaedon Spurlock
           </span>
-          <div className="flex flex-row gap-4 text-neutral-700">
+          <div className="flex flex-row gap-4 text-foreground/90">
             <a href="https://www.instagram.com/jaedonspurlock" target="_blank">
               <CiInstagram className={iconStyle} size={20} />
             </a>

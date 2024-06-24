@@ -11,17 +11,14 @@ const Education = () => {
       <div className="flex flex-col gap-8 mt-4">
         <div className="flex flex-row items-center justify-center sm:justify-between">
           <div>
-            <h1 className="text-md sm:text-xl font-semibold text-neutral-700">
+            <h1 className="text-md sm:text-xl font-semibold text-foreground/80">
               {data.education.school}
             </h1>
-            <h1 className="font-semibold text-neutral-500 text-sm sm:text-xl">
+            <h1 className="font-semibold text-foreground/60 text-sm sm:text-xl">
               College of CSTEM
             </h1>
-            <p className="text-neutral-600 text-sm mt-4">
+            <p className="text-foreground/60 text-sm mt-4">
               {data.education.degree}
-            </p>
-            <p className="text-neutral-600 text-sm">
-              CSUSM Certificate in Software Design Methologies
             </p>
           </div>
 
@@ -29,8 +26,8 @@ const Education = () => {
             <Image
               src="/education/csusm.jpg"
               alt="CSUSM"
-              width={1000}
-              height={1000}
+              width={900}
+              height={900}
               className="w-full h-full object-cover opacity-90"
             />
           </div>

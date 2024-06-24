@@ -10,11 +10,11 @@ const Experience = () => {
         {data.work.map((experience, index) => (
           <div key={index}>
             <span className="flex flex-row justify-between flex-wrap">
-              <h1 className="text-md sm:text-xl font-medium text-neutral-700">
+              <h1 className="text-md sm:text-xl font-medium text-foreground/70">
                 {experience.company}
               </h1>
 
-              <h2 className="text-neutral-600 font-medium text-sm sm:text-base">
+              <h2 className="text-foreground/70 font-medium text-sm sm:text-base">
                 {experience.position} | {experience.date}
               </h2>
             </span>

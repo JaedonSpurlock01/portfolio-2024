@@ -68,28 +68,22 @@ const Projects = () => {
       <div className="w-full flex flex-col gap-2 mt-4">
         {temp_projects.map((project, index) => (
           <Link key={index} href={project.link}>
-            <div className="group border bg-neutral-50 rounded-sm p-3 h-[6rem] flex flex-row items-center gap-4">
+            <div className="group border border-border bg-neutral-50 dark:bg-secondary rounded-sm p-3 h-[6rem] flex flex-row items-center gap-4">
               <div className="h-full">
                 <span className="flex flex-row items-center gap-2">
-                  <h1 className="text-neutral-600 font-semibold">
+                  <h1 className="text-foreground/80 font-semibold">
                     {project.name}
                   </h1>
                   {project.deployed && (
                     <div className="w-2 h-2 rounded-full bg-green-600" />
                   )}
-                  <a href={project.githubLink} target="_blank">
-                    <FaGithub
-                      className="text-neutral-600 hover:text-[#4183C4] transition-colors"
-                      size={20}
-                    />
-                  </a>
                 </span>
-                <p className="text-neutral-500 text-sm">
+                <p className="text-foreground/50 text-sm">
                   {project.description}
                 </p>
               </div>
 
-              <span className="text-neutral-600 font-medium text-sm flex flex-row items-center gap-2 transition-all group-hover:scale-110 group-hover:text-[#4183C4] hover:underline">
+              <span className="text-foreground/80 font-medium text-sm flex flex-row items-center gap-2 transition-all group-hover:scale-110 group-hover:text-[#4183C4] hover:underline ml-auto">
                 <FaExternalLinkAlt size={15} />
               </span>
             </div>

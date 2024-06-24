@@ -1,14 +1,27 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
-import ActiveSectionContextProvider from "@/context/active_section";
+import { cn } from "@/lib/utils";
+import { ThemeProvider } from "next-themes";
+import { data } from "@/lib/data";
 
-const inter = Inter({ subsets: ["latin"] });
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Jaedon Spurlock",
   description: "Jaedon Spurlock's Portfolio",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? data.url),
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 };
 
 export default function RootLayout({
@@ -17,12 +30,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ActiveSectionContextProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
           <Footer />
-        </ActiveSectionContextProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

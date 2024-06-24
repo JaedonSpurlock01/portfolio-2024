@@ -1,5 +1,5 @@
 import React from "react";
-import { Title } from "./headings";
+import { Title } from "../headings";
 import { data } from "@/lib/data";
 
 const skillsSectionStyle =
@@ -11,7 +11,7 @@ const Skills = () => {
       <Title>Skills</Title>
 
       <div className="flex flex-col items-center md:items-start">
-        <h2 className="font-medium text-neutral-700">Languages</h2>
+        <h2 className="font-medium text-foreground/90">Languages</h2>
         <div className={skillsSectionStyle}>
           {data.skills.languages.map((language, index) => (
             <SkillTag key={index}>{language}</SkillTag>
@@ -20,7 +20,7 @@ const Skills = () => {
       </div>
 
       <div className="flex flex-col items-center md:items-start">
-        <h2 className="font-medium text-neutral-700">Technologies</h2>
+        <h2 className="font-medium text-foreground/90">Technologies</h2>
         <div className={skillsSectionStyle}>
           {data.skills.technologies.map((tech, index) => (
             <SkillTag key={index}>{tech}</SkillTag>
@@ -29,7 +29,7 @@ const Skills = () => {
       </div>
 
       <div className="flex flex-col items-center md:items-start">
-        <h2 className="font-medium text-neutral-700">Tools & Services</h2>
+        <h2 className="font-medium text-foreground/90">Tools & Services</h2>
         <div className={skillsSectionStyle}>
           {data.skills.tools.map((tool, index) => (
             <SkillTag key={index}>{tool}</SkillTag>
@@ -38,7 +38,7 @@ const Skills = () => {
       </div>
 
       <div className="flex flex-col items-center md:items-start">
-        <h2 className="font-medium text-neutral-700">Practices</h2>
+        <h2 className="font-medium text-foreground/90">Practices</h2>
         <div className={skillsSectionStyle}>
           {data.skills.practices.map((practice, index) => (
             <SkillTag key={index}>{practice}</SkillTag>
@@ -53,7 +53,7 @@ export default Skills;
 
 const SkillTag = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="py-1 px-2 rounded-sm border hover:bg-neutral-100 transition-all bg-neutral-50 text-neutral-600">
+    <div className="py-1 px-2 rounded-sm border hover:bg-neutral-100 dark:hover:bg-secondary-foreground/40 transition-all bg-neutral-50 dark:bg-secondary text-foreground/80">
       {children}
     </div>
   );

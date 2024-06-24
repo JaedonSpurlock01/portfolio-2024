@@ -8,7 +8,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./table";
+} from "./ui/table";
 import { data } from "@/lib/data";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -31,10 +31,7 @@ const Courses = () => {
 
           <TableBody>
             {data.courses.map((course, index) => (
-              <TableRow
-                key={index}
-                
-              >
+              <TableRow key={index}>
                 <TableCell>{course.number}</TableCell>
                 <TableCell>{course.catalog}</TableCell>
                 <TableCell>{course.name}</TableCell>

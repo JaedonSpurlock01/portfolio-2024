@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import { data } from "@/lib/data";
-import Social from "./social";
+import Social from "./ui/social";
 import { CiGlobe } from "react-icons/ci";
 import { Subtitle, Title } from "./headings";
+import ThemeSwitch from "./ui/theme-switch";
 
 const Hero = () => {
   return (
@@ -18,14 +19,18 @@ const Hero = () => {
         </h3>
 
         {/* CALL TO ACTIONS */}
-        <span className="text-neutral-400">
-          <a className="hover:underline hover:cursor-pointer text-[#4183C4]">
-            Resume
-          </a>
-          {" | "}
-          <a className="hover:underline hover:cursor-pointer text-[#4183C4]">
-            Contact
-          </a>
+        <span className="text-neutral-400 flex items-center w-full">
+          <span className="flex gap-2">
+            <a className="hover:underline hover:cursor-pointer text-[#4183C4]">
+              Resume
+            </a>
+            <a className="hover:underline hover:cursor-pointer text-[#4183C4]">
+              Contact
+            </a>
+          </span>
+          <span className="ml-auto">
+            <ThemeSwitch />
+          </span>
         </span>
 
         {/* SOCIAL LINKS */}
