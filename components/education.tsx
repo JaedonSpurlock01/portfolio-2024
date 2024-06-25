@@ -22,7 +22,7 @@ const Education = () => {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-md hidden md:block md:w-1/2 shadow-md">
+          {/* <div className="overflow-hidden rounded-md hidden md:block md:w-1/2 shadow-md">
             <Image
               src="/education/csusm.jpg"
               alt="CSUSM"
@@ -30,7 +30,7 @@ const Education = () => {
               height={900}
               className="w-full h-full object-cover opacity-90"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
