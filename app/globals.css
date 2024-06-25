@@ -82,9 +82,13 @@
 }
 
 .max-content-width {
-  @apply w-full md:max-w-[90%] xl:max-w-[60%] 2xl:max-w-[700px];
+  @apply w-full md:max-w-[90%]  xl:max-w-[700px];
 }
 
 .page-layout {
   @apply w-full h-full flex flex-col items-center justify-center pt-10 pb-28 md:pt-28 gap-16 px-4 md:px-0;
+}
+
+html {
+  scroll-behavior: smooth !important;
 }

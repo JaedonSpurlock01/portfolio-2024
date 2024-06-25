@@ -43,6 +43,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <div className="hidden dark:block absolute top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(48,68,100,0.4),rgba(255,255,255,0))]" />
           {children}
           <Footer />
         </ThemeProvider>

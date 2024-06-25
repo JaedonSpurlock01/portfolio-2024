@@ -1,75 +1,74 @@
-import { posts } from "#site/content/blog";
+import { projects } from "#site/content/projects";
 import { MDXContent } from "@/components/mdx/mdx-components";
 import { notFound } from "next/navigation";
 
 import "@/styles/mdx.css";
 import { Metadata } from "next";
-import { Tag } from "@/components/ui/tag";
 import { data } from "@/lib/data";
 import Hero from "@/components/hero";
 import Nav from "@/components/nav";
-interface PostPageProps {
+interface ProjectPageProps {
   params: {
     slug: string[];
   };
 }
 
-async function getPostFromParams(params: PostPageProps["params"]) {
+async function getProjectFromParams(params: ProjectPageProps["params"]) {
   const slug = params?.slug?.join("/");
-  const post = posts.find((post) => post.slugAsParams === slug);
+  const project = projects.find((project) => project.slugAsParams === slug);
 
-  return post;
+  return project;
 }
 
 export async function generateMetadata({
   params,
-}: PostPageProps): Promise<Metadata> {
-  const post = await getPostFromParams(params);
+}: ProjectPageProps): Promise<Metadata> {
+  const project = await getProjectFromParams(params);
 
-  if (!post) {
+  if (!project) {
     return {};
   }
 
   const ogSearchParams = new URLSearchParams();
-  ogSearchParams.set("title", post.title);
+  ogSearchParams.set("title", project.title);
 
   return {
-    title: post.title,
-    description: post.description,
+    title: project.title,
+    description: project.description,
     authors: { name: data.name },
     openGraph: {
-      title: post.title,
-      description: post.description,
+      title: project.title,
+      description: project.description,
       type: "article",
-      url: post.slug,
+      url: project.slug,
       images: [
         {
           url: `/api/og?${ogSearchParams.toString()}`,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: project.title,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.description,
+      title: project.title,
+      description: project.description,
       images: [`/api/og?${ogSearchParams.toString()}`],
     },
   };
 }
 
 export async function generateStaticParams(): Promise<
-  PostPageProps["params"][]
+  ProjectPageProps["params"][]
 > {
-  return posts.map((post) => ({ slug: post.slugAsParams.split("/") }));
+  return projects.map((project) => ({ slug: project.slugAsParams.split("/") }));
 }
 
-export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostFromParams(params);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const project = await getProjectFromParams(params);
 
-  if (!post || !post.published) {
+  if (!project || !project.published) {
     notFound();
   }
 
@@ -78,19 +77,14 @@ export default async function PostPage({ params }: PostPageProps) {
       <Hero />
       <Nav />
       <article className="max-content-width container py-6 prose dark:prose-invert prose-code:before:hidden prose-code:after:hidden">
-        <h1 className="mb-2">{post.title}</h1>
-        <div className="flex gap-2 mb-2">
-          {post.tags?.map((tag: string) => (
-            <Tag tag={tag} key={tag} />
-          ))}
-        </div>
-        {post.description ? (
+        <h1 className="mb-2">{project.title}</h1>
+        {project.description ? (
           <p className="text-xl mt-0 text-muted-foreground">
-            {post.description}
+            {project.description}
           </p>
         ) : null}
         <hr className="my-4" />
-        <MDXContent code={post.body} />
+        <MDXContent code={project.body} />
       </article>
     </main>
   );

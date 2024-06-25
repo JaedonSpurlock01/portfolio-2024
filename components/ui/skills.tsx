@@ -53,7 +53,7 @@ export default Skills;
 
 const SkillTag = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="py-1 px-2 rounded-sm border hover:bg-neutral-100 dark:hover:bg-secondary-foreground/40 transition-all bg-neutral-50 dark:bg-secondary text-foreground/80">
+    <div className="py-1 px-2 rounded-sm border border-border hover:bg-secondary-foreground/10 dark:hover:bg-secondary-foreground/10 transition-all bg-neutral-50 dark:bg-primary-foreground text-foreground/80">
       {children}
     </div>
   );

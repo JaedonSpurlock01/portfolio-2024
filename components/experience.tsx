@@ -14,7 +14,7 @@ const Experience = () => {
                 {experience.company}
               </h1>
 
-              <h2 className="text-foreground/70 font-medium text-sm sm:text-base">
+              <h2 className="text-foreground/70 font-medium text-sm sm:text-base ">
                 {experience.position} | {experience.date}
               </h2>
             </span>
