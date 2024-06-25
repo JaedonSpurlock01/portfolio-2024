@@ -7,7 +7,7 @@ const iconStyle = "hover:text-[#4183C4] hover:cursor-pointer transition";
 const Footer = () => {
   return (
     <footer>
-      <div className="w-full h-12 bg-secondary flex flex-col items-center justify-center">
+      <div className="w-full h-12 bg-primary-foreground flex flex-col items-center justify-center">
         <div className="max-content-width flex flex-row items-center justify-between">
           <span className="text-foreground/90 font-semibold text-xs px-2 md:px-0">
             © 2024 Jaedon Spurlock

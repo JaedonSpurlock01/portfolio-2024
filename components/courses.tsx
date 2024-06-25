@@ -17,7 +17,7 @@ const Courses = () => {
     <section className="max-content-width">
       <Title>Courses</Title>
 
-      <div className="w-full border border-neutral-300 rounded-md mt-4">
+      <div className="w-full border border-border bg-neutral-50 dark:bg-primary-foreground rounded-md mt-4">
         <Table>
           <TableHeader>
             <TableRow>
@@ -31,12 +31,15 @@ const Courses = () => {
 
           <TableBody>
             {data.courses.map((course, index) => (
-              <TableRow key={index}>
+              <TableRow
+                key={index}
+                className="hover:bg-secondary-foreground/10"
+              >
                 <TableCell>{course.number}</TableCell>
                 <TableCell>{course.catalog}</TableCell>
                 <TableCell>{course.name}</TableCell>
                 <TableCell>{course.term}</TableCell>
-                <TableCell className="flex flex-row items-center justify-center text-neutral-600">
+                <TableCell className="flex flex-row items-center justify-center text-foreground">
                   <a
                     href={`https://catalog.csusm.edu/preview_course_nopop.php?catoid=1&coid=${course.id}`}
                     target="_blank"

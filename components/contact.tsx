@@ -28,18 +28,18 @@ const Contact = () => {
           name="senderEmail"
           required
           maxLength={500}
-          className="h-14 px-4 rounded-md border border-neutral-300 transition-all"
+          className="h-14 px-4 rounded-md border border-border transition-all"
           placeholder="Your email"
         />
         <textarea
-          className="h-52 my-3 rounded-md border border-neutral-300 p-4 transition-all"
+          className="h-52 my-3 rounded-md border border-border p-4 transition-all"
           name="message"
           required
           maxLength={5000}
           placeholder="Your message"
         />
 
-        <button className="border w-fit px-12 p-2 rounded-lg hover:bg-neutral-700 bg-neutral-600 transition-all text-neutral-100">
+        <button className="border border-border w-fit px-12 p-2 rounded-lg hover:bg-secondary-foreground/10 dark:hover:bg-secondary-foreground/10 bg-neutral-50 dark:bg-primary-foreground transition-all text-foreground/80">
           Submit
         </button>
       </form>
