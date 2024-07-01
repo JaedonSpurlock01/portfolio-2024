@@ -7,6 +7,9 @@ import { Metadata } from "next";
 import { data } from "@/lib/data";
 import Hero from "@/components/hero";
 import Nav from "@/components/nav";
+import Comments from "@/components/comments";
+import { FaComment, FaGithub, FaRegComment } from "react-icons/fa";
+import { formatDate } from "@/lib/utils";
 interface ProjectPageProps {
   params: {
     slug: string[];
@@ -76,15 +79,41 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <main className="page-layout">
       <Hero />
       <Nav />
-      <article className="max-content-width container py-6 prose dark:prose-invert prose-code:before:hidden prose-code:after:hidden">
-        <h1 className="mb-2">{project.title}</h1>
+      <article className="max-content-width py-6 prose dark:prose-invert prose-code:before:hidden prose-code:after:hidden">
+        <h1 className="mb-2 text-3xl font-semibold text-foreground">
+          {project.title}
+        </h1>
         {project.description ? (
           <p className="text-xl mt-0 text-muted-foreground">
             {project.description}
           </p>
         ) : null}
-        <hr className="my-4" />
+        <div className="flex flex-row items-center justify-between">
+          <p>
+            {formatDate(project.date)}
+            {" - "}
+            {Math.round(project.body.split(" ").length / 200)} min read
+          </p>
+          <span className="flex items-center gap-4">
+            <a
+              href="#comments"
+              className="hover:text-[#4183C4] transition-colors"
+            >
+              <FaRegComment size={25} />
+            </a>
+            <a
+              href={project.github}
+              target="_blank"
+              className="hover:text-[#4183C4] transition-colors"
+            >
+              <FaGithub size={25} />
+            </a>
+          </span>
+        </div>
+        <hr className="my-1 pb-4" />
         <MDXContent code={project.body} />
+        <a id="comments" />
+        <Comments />
       </article>
     </main>
   );

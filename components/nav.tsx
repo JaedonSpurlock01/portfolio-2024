@@ -16,7 +16,7 @@ const Nav = () => {
           <li
             key={index}
             className={clsx(
-              "md:text-xl border-b-2 hover:text-[#4183C4]",
+              "md:text-xl border-b-2 hover:text-[#4183C4] transition-colors",
               pathname === link.ref
                 ? "font-bold border-neutral-700 text-[#4183C4]"
                 : "font-medium border-transparent text-foreground/90"

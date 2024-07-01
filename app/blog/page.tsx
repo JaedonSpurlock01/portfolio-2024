@@ -15,6 +15,7 @@ import Hero from "@/components/hero";
 import Nav from "@/components/nav";
 import Link from "next/link";
 import { badgeVariants } from "@/components/ui/badge";
+import { Title } from "@/components/headings";
 
 export const metadata: Metadata = {
   title: "My blog",
@@ -56,7 +57,8 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <Hero />
       <Nav />
       <div className="flex flex-col items-center justify-center gap-3 max-content-width">
-        <div className="flex flex-col sm:flex-row items-center gap-2">
+        <Title>Blog</Title>
+        <div className="flex flex-col w-full sm:flex-row items-center gap-2">
           <Card className="w-full bg-neutral-50 dark:bg-primary-foreground">
             <CardHeader>
               <CardTitle className="flex justify-between">

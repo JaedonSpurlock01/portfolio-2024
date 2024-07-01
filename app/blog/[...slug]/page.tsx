@@ -8,6 +8,11 @@ import { Tag } from "@/components/ui/tag";
 import { data } from "@/lib/data";
 import Hero from "@/components/hero";
 import Nav from "@/components/nav";
+import Comments from "@/components/comments";
+import { formatDate } from "@/lib/utils";
+import { MdComment } from "react-icons/md";
+import { FaComment } from "react-icons/fa";
+import { Fragment } from "react";
 interface PostPageProps {
   params: {
     slug: string[];
@@ -77,8 +82,10 @@ export default async function PostPage({ params }: PostPageProps) {
     <main className="page-layout">
       <Hero />
       <Nav />
-      <article className="max-content-width container py-6 prose dark:prose-invert prose-code:before:hidden prose-code:after:hidden">
-        <h1 className="mb-2">{post.title}</h1>
+      <article className="max-content-width py-6 prose dark:prose-invert prose-code:before:hidden prose-code:after:hidden">
+        <h1 className="text-3xl font-semibold text-foreground mb-2">
+          {post.title}
+        </h1>
         <div className="flex gap-2 mb-2">
           {post.tags?.map((tag: string) => (
             <Tag tag={tag} key={tag} />
@@ -89,8 +96,20 @@ export default async function PostPage({ params }: PostPageProps) {
             {post.description}
           </p>
         ) : null}
-        <hr className="my-4" />
+        <div className="flex flex-row items-center justify-between">
+          <p>
+            {formatDate(post.date)}
+            {" - "}
+            {Math.round(post.body.split(" ").length / 200)} min read
+          </p>
+          <a href="#comments">
+            <FaComment size={20} />
+          </a>
+        </div>
+        <hr className="my-1 pb-10" />
         <MDXContent code={post.body} />
+        <a id="comments" />
+        <Comments />
       </article>
     </main>
   );

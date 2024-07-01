@@ -15,7 +15,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 const Courses = () => {
   return (
     <section className="max-content-width">
-      <Title>Courses</Title>
+      <Title>My Courses</Title>
 
       <div className="w-full border border-border bg-neutral-50 dark:bg-primary-foreground rounded-md mt-4">
         <Table>
