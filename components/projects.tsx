@@ -1,35 +1,31 @@
 import React from "react";
 import { Title } from "./headings";
 import { ProjectItem } from "./project-item";
-import { projects } from "#site/content/projects";
 import { sortPosts } from "@/lib/utils";
+import { data } from "@/lib/data";
+import ProjectCard from "./project-card";
 
 const Projects = () => {
-  const sortedProjects = sortPosts(projects).filter((post) => post.published);
-
   return (
     <section className="max-content-width">
       <Title>Projects</Title>
 
       <div className="w-full mt-4">
-        {sortedProjects?.length > 0 ? (
-          <ul className=" flex flex-col gap-2">
-            {sortedProjects.map((project, index) => {
-              const { slug, date, title, description } = project;
-              return (
-                <ProjectItem
-                  title={title}
-                  slug={slug}
-                  description={description}
-                  key={index}
-                  date={date}
-                />
-              );
-            })}
-          </ul>
-        ) : (
-          <p>Nothing to see here yet</p>
-        )}
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {data.projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              websiteUrl={project.websiteUrl || ""}
+              githubUrl={project.githubUrl || ""}
+              imageSrc={project.imageSrc}
+              tags={project.tags}
+              date={project.date}
+              className=""
+            />
+          ))}
+        </ul>
       </div>
     </section>
   );

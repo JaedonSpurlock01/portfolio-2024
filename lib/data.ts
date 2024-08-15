@@ -10,27 +10,17 @@ export const links = [
     name: "Blog",
     ref: "/blog",
   },
-  {
-    name: "Projects",
-    ref: "/projects",
-  },
-  // {
-  //   name: "Interests",
-  //   ref: "/interests",
-  // },
-  {
-    name: "Education",
-    ref: "/education",
-  },
 ] as const;
 
 export const data = {
   name: "Jaedon Spurlock",
   role: "Software Engineering",
+  email: "jaedonaspurlock@outlook.com",
+  resume: "/resume.pdf",
   location: "San Diego County, California",
   url: "https://localhost:3000",
   about:
-    "I’m a Software Engineer with experience in Web Development and Embedded Systems. I am focused on the implementation of high-quality software through standard industry practices with powerful CI/CD pipelines. I am passionate about developing unique solutions to problems in the industry with simple, but engaging artifacts.",
+    "I'm a passionate software engineer, turning ideas into engaging, high-quality digital experiences. I have over a year of professional experience through internship and coding projects. My main specialization is full-stack development in the React web and mobile ecosystem. Feel free to contact me if you would like to connect.",
   links: {
     github: "https://github.com/JaedonSpurlock01",
   },
@@ -62,15 +52,19 @@ export const data = {
       company: "Welfie",
       position: "Software Engineer Intern",
       date: "Jun 2024 - Present",
+      imageSrc: "/welfie.png",
+      href: "https://www.linkedin.com/company/welfie/",
       description:
-        "Contributed to the development of welfie health products. Focusing on enhancing the educational experiences of undergraduate students through innovative approaches and technologies.",
+        "Orchestrate development of cross-platform mobile app by using React Native, Expo, and NativeWind. Accelerate workflow efficiency by 30% by integrating developer documentation and agile methodologies. Led a team of 8 interns to establish web testing ecosystem . Build automated testing framework using Python and Selenium, enhancing test coverage by 70%. Deploy and manage a CI/CD pipeline on Bitbucket by using Google Cloud, Docker, and Linux configurations. Refactor, debug, and implement website production code.",
     },
     {
       company: "Google SDC, CSUSM",
       position: "Technical Lead",
       date: "May 2024 - Present",
+      imageSrc: "/gdsc.png",
+      href: "",
       description:
-        "Leading the development of projects for the Google Developer Student Club at California State University, San Marcos.",
+        "Fabricate workflows by setting up code standards, code review, automated build processing and testing. Deliver test-driven development through automated testing with Jest, Selenium, and GitHub Actions. Implement club website by using NextJS, React, and TypeScript",
     },
   ],
   education: {
@@ -78,14 +72,19 @@ export const data = {
     degree: "Bachelors of Science in Software Engineering",
     gpa: "3.95/4.00",
     date: "Aug 2022 - Present",
+    imageSrc: "/education/csusm.png",
+    href: "https://www.csusm.edu/",
+    desc: "Courses: Data Structures & Algorithms, Software Design & Development, Database Management Systems, Calculus I-II, Real-Time Concepts For Embedded Systems, Physics | GPA: 3.95/4.00",
   },
   skills: {
-    languages: ["Python", "C++", "TypeScript", "CSS", "HTML"],
-    technologies: ["React", "Angular", "Node", "Vite", "NextJS"],
+    languages: ["Python", "C++", "TypeScript", "CSS", "HTML", "JSON", "Yaml"],
+    technologies: ["React", "React Native", "NodeJS", "Vite", "NextJS", "Expo"],
     tools: [
       "AWS",
+      "Google Cloud",
       "MongoDB",
       "VSCode",
+      "Docker",
       "Git",
       "GitHub",
       "Postman",
@@ -268,4 +267,102 @@ export const data = {
       },
     ],
   },
+  projects: [
+    {
+      title: "Routify",
+      description:
+        "City pathfinding visualizer. Used to learn fundamental graph traversal algorithms such as BFS, DFS, or A* Search.",
+      websiteUrl: "https://www.routify.cc",
+      githubUrl: "https://www.github.com/jaedonspurlock01/routify",
+      imageSrc: "/projects/routify.gif",
+      date: "Jan 2024 - Mar 2024",
+      tags: [
+        "JavaScript",
+        "NextJS",
+        "ReactJS",
+        "ThreeJS",
+        "HTML",
+        "CSS",
+        "Nominatim API",
+        "Overpass API",
+        "Amazon S3",
+      ],
+    },
+    {
+      title: "DreamLog",
+      description:
+        "Dream journal mobile application with local-first architecture and in-depth sleep and dream recall analysis.",
+      websiteUrl: null,
+      githubUrl: "https://www.github.com/jaedonspurlock01/dreamlog",
+      imageSrc: "/projects/dreamlog.png",
+      date: "Aug 2024 - Present",
+      tags: ["React Native", "TypeScript", "Expo", "SupaBase", "PowerSync"],
+    },
+    {
+      title: "Reside",
+      description:
+        "Real estate concept website constructed with React, NextJS, ShadcnUI, Java Spring, and deployed with Vercel.",
+      websiteUrl: null,
+      githubUrl: "https://github.com/JaedonSpurlock01/reside",
+      imageSrc: "/projects/reside.webp",
+      date: "Mar 2024 - Apr 2024",
+      tags: [
+        "TypeScript",
+        "Java",
+        "Python",
+        "NextJS",
+        "React",
+        "MapBox API",
+        "CSS",
+        "MongoDB",
+      ],
+    },
+    {
+      title: "GDSC Student Platform",
+      description:
+        "Developing technical interview & project prep platform for students at CSUSM.",
+      websiteUrl: "https://github.com/JaedonSpurlock01/robotcar",
+      githubUrl: "https://github.com/JaedonSpurlock01/robotcar",
+      imageSrc: "/projects/gdscweb.png",
+      date: "Jun 2024 - Present",
+      tags: ["TypeScript", "React", "NextJS", "MagicUI", "ShadcnUI"],
+    },
+    {
+      title: "Robotic Car Platform",
+      description:
+        "Contributed to the assembly and software development of a remote-controlled 4-wheeled robotic car.",
+      websiteUrl: null,
+      githubUrl: "https://github.com/JaedonSpurlock01/robotcar",
+      imageSrc: "/projects/robotcar.webp",
+      date: "April 2024 - May 2024",
+      tags: [
+        "C++",
+        "ROS",
+        "PWM",
+        "Raspberry PI",
+        "SDL API",
+        "Motors",
+        "DC-DC",
+        "Joystick",
+      ],
+    },
+    {
+      title: "WebWizzard",
+      description:
+        "AI chatbot chrome extension that provides chat prompting on websites and also uses web scraping to gather relevant data.",
+      websiteUrl: null,
+      githubUrl: "https://github.com/JaedonSpurlock01/webwizzard",
+      imageSrc: "/projects/webwizzard.png",
+      date: "Dec 2023",
+      tags: [
+        "JavaScript",
+        "Chrome",
+        "Extension",
+        "Gemini AI",
+        "DOM API",
+        "React",
+        "JSON",
+      ],
+    },
+  ],
 };

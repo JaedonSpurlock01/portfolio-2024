@@ -12,7 +12,6 @@ import {
 } from "@/lib/utils";
 import { Metadata } from "next";
 import Hero from "@/components/hero";
-import Nav from "@/components/nav";
 import Link from "next/link";
 import { badgeVariants } from "@/components/ui/badge";
 import { Title } from "@/components/headings";
@@ -55,7 +54,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   return (
     <main className="page-layout">
       <Hero />
-      <Nav />
       <div className="flex flex-col items-center justify-center gap-3 max-content-width">
         <Title>Blog</Title>
         <div className="flex flex-col w-full sm:flex-row items-center gap-2">

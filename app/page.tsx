@@ -1,8 +1,8 @@
 import About from "@/components/about";
-import Contact from "@/components/contact";
+import DotPattern from "@/components/dot-background";
+import Education from "@/components/education";
 import Experience from "@/components/experience";
 import Hero from "@/components/hero";
-import Nav from "@/components/nav";
 import Projects from "@/components/projects";
 import Skills from "@/components/ui/skills";
 import { data } from "@/lib/data";
@@ -16,12 +16,13 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="page-layout">
+      <DotPattern className="[mask-image:radial-gradient(circle_2000px_at_50%_-20%,white,transparent,transparent)] " />
       <Hero />
-      <Nav />
       <About />
       <Experience />
+      <Education />
       <Skills />
-      {/* <Contact /> */}
+      <Projects />
     </main>
   );
 }

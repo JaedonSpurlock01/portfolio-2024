@@ -7,7 +7,6 @@ import { Metadata } from "next";
 import { Tag } from "@/components/ui/tag";
 import { data } from "@/lib/data";
 import Hero from "@/components/hero";
-import Nav from "@/components/nav";
 import Comments from "@/components/comments";
 import { formatDate } from "@/lib/utils";
 import { MdComment } from "react-icons/md";
@@ -81,7 +80,6 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <main className="page-layout">
       <Hero />
-      <Nav />
       <article className="max-content-width py-6 prose dark:prose-invert prose-code:before:hidden prose-code:after:hidden">
         <h1 className="text-3xl font-semibold text-foreground mb-2">
           {post.title}

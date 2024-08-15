@@ -21,20 +21,27 @@ const Hero = () => {
         {/* CALL TO ACTIONS */}
         <span className="text-neutral-400 flex items-center w-full">
           <span className="flex gap-2">
-            <a className="hover:underline hover:cursor-pointer text-[#4183C4]">
+            <a
+              className="hover:underline hover:cursor-pointer text-[#4183C4]"
+              href={data.resume}
+              target="_blank"
+            >
               Resume
             </a>
-            <a className="hover:underline hover:cursor-pointer text-[#4183C4]">
+            <a
+              className="hover:underline hover:cursor-pointer text-[#4183C4]"
+              href={`mailto:${data.email}`}
+            >
               Contact
             </a>
           </span>
-          <span className="ml-auto">
+          <span className="ml-auto z-10">
             <ThemeSwitch />
           </span>
         </span>
 
         {/* SOCIAL LINKS */}
-        <span className="flex flex-row items-center gap-1">
+        <span className="flex flex-row items-center gap-1 z-10">
           {data.socials.map((social, index) => (
             <Social key={index} icon={social.icon} link={social.link} />
           ))}
@@ -45,8 +52,8 @@ const Hero = () => {
       <Image
         src="/jaedonspurlock.jpg"
         alt="Picture of Jaedon Spurlock"
-        width="150"
-        height="150"
+        width="200"
+        height="200"
         className="rounded-full"
       />
     </section>
