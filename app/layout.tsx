@@ -16,6 +16,12 @@ export const metadata: Metadata = {
   title: "Jaedon Spurlock",
   description: "Jaedon Spurlock's Portfolio",
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? data.url),
+  openGraph: {
+    title: "Jaedon Spurlock",
+    description: "Jaedon Spurlock's Portfolio",
+    url: new URL(process.env.NEXT_PUBLIC_APP_URL ?? data.url),
+    images: [{ url: "/opengraph-image.png" }],
+  },
 };
 
 export const viewport: Viewport = {

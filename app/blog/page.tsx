@@ -11,10 +11,18 @@ import {
   sortTagsByCount,
 } from "@/lib/utils";
 import { Metadata } from "next";
-import Hero from "@/components/hero";
 import Link from "next/link";
 import { badgeVariants } from "@/components/ui/badge";
 import { Title } from "@/components/headings";
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "My blog",
@@ -52,12 +60,24 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 
   return (
-    <main className="page-layout">
-      <Hero />
+    <main className="page-layout w-full h-full items-center">
       <div className="flex flex-col items-center justify-center gap-3 max-content-width">
+        <Breadcrumb className="w-full items-start mb-4">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Portfolio</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/blog" className="text-primary">
+                Blog
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         <Title>Blog</Title>
         <div className="flex flex-col w-full sm:flex-row items-center gap-2">
-          <Card className="w-full bg-neutral-50 dark:bg-primary-foreground">
+          <Card className="w-full bg-neutral-50 dark:bg-primary-foreground p-2">
             <CardHeader>
               <CardTitle className="flex justify-between">
                 <span>Tags</span>

@@ -14,7 +14,7 @@ export const links = [
 
 export const data = {
   name: "Jaedon Spurlock",
-  role: "Software Engineering",
+  role: "Software Engineer",
   email: "jaedonaspurlock@outlook.com",
   resume: "/resume.pdf",
   location: "San Diego County, California",
@@ -66,16 +66,54 @@ export const data = {
       description:
         "Fabricate workflows by setting up code standards, code review, automated build processing and testing. Deliver test-driven development through automated testing with Jest, Selenium, and GitHub Actions. Implement club website by using NextJS, React, and TypeScript",
     },
+    {
+      company: "CodeDay",
+      position: "Project Contributor",
+      date: "Oct 2023 - Nov 2023",
+      imageSrc: "/codeday.webp",
+      href: "",
+      description:
+        "Improved reliability of an open-source project by implementing a test case with JavaScript and Mocha. Led a team of 3 to verify conversions from kWh to BTU energy units, resulting in increased confidence in data integrity",
+    },
   ],
-  education: {
-    school: "California State University, San Marcos",
-    degree: "Bachelors of Science in Software Engineering",
-    gpa: "3.95/4.00",
-    date: "Aug 2022 - Present",
-    imageSrc: "/education/csusm.png",
-    href: "https://www.csusm.edu/",
-    desc: "Courses: Data Structures & Algorithms, Software Design & Development, Database Management Systems, Calculus I-II, Real-Time Concepts For Embedded Systems, Physics | GPA: 3.95/4.00",
-  },
+  education: [
+    {
+      school: "California State University, San Marcos",
+      degree: "Bachelors of Science in Software Engineering",
+      gpa: "3.95/4.00",
+      date: "Aug 2022 - Present",
+      imageSrc: "/education/csusm.png",
+      href: "https://www.csusm.edu/",
+      desc: "Courses: Data Structures & Algorithms, Software Design & Development, Database Management Systems, Calculus I-II, Real-Time Concepts For Embedded Systems, Physics | GPA: 3.95/4.00",
+    },
+    {
+      school: "Computing Talent Initiative Accelerate",
+      degree: "Technical Interview Prep",
+      gpa: "",
+      date: "May 2023 - Dec 2023",
+      imageSrc: "/education/cti.png",
+      href: "https://computingtalentinitiative.org/accelerate/",
+      desc: "Participated in a technical interview prep program that helped improve problem solving skills along with in-depth open-source experience. This is where I first learned how to use Git!",
+    },
+    {
+      school: "California Virtual Academy @ San Diego",
+      degree: "High School Diploma",
+      gpa: "",
+      date: "Aug 2020 - Jun 2022",
+      imageSrc: "/education/cava.webp",
+      href: "https://cava.k12.com/",
+      desc: "",
+    },
+    {
+      school: "River Valley High School @ Marion, Ohio",
+      degree: "Education",
+      gpa: "",
+      date: "Aug 2018 - Jun 2020",
+      imageSrc: "/education/rvhs.png",
+      href: "https://hs.rvk12.org/",
+      desc: "",
+    },
+  ],
   skills: {
     languages: ["Python", "C++", "TypeScript", "CSS", "HTML", "JSON", "Yaml"],
     technologies: ["React", "React Native", "NodeJS", "Vite", "NextJS", "Expo"],

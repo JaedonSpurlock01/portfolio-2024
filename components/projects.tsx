@@ -1,13 +1,16 @@
+"use client";
+
 import React from "react";
 import { Title } from "./headings";
-import { ProjectItem } from "./project-item";
-import { sortPosts } from "@/lib/utils";
 import { data } from "@/lib/data";
 import ProjectCard from "./project-card";
+import { useSectionInView } from "@/lib/hooks";
 
 const Projects = () => {
+  const { ref } = useSectionInView("projects");
+
   return (
-    <section className="max-content-width">
+    <section className="max-content-width" ref={ref} id="projects">
       <Title>Projects</Title>
 
       <div className="w-full mt-4">

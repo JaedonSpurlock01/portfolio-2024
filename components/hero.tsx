@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import { data } from "@/lib/data";
@@ -5,10 +7,17 @@ import Social from "./ui/social";
 import { CiGlobe } from "react-icons/ci";
 import { Subtitle, Title } from "./headings";
 import ThemeSwitch from "./ui/theme-switch";
+import { useSectionInView } from "@/lib/hooks";
 
 const Hero = () => {
+  const { ref } = useSectionInView("overview");
+
   return (
-    <section className="max-content-width flex-col-reverse flex sm:flex-row justify-between items-center">
+    <section
+      className="max-content-width flex-col-reverse flex sm:flex-row justify-between items-center"
+      ref={ref}
+      id="overview"
+    >
       {/* HERO CONTENT */}
       <header className="flex flex-col gap-2 items-center text-center sm:items-start sm:text-left">
         {/* INTRODUCTION */}
@@ -54,7 +63,7 @@ const Hero = () => {
         alt="Picture of Jaedon Spurlock"
         width="200"
         height="200"
-        className="rounded-full"
+        className="rounded-full z-10"
       />
     </section>
   );

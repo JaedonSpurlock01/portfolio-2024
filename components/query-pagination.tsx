@@ -52,6 +52,7 @@ export function QueryPagination({
               <PaginationLink
                 isActive={currentPage === index + 1}
                 href={createPageURL(index + 1)}
+                className="bg-primary-foreground"
               >
                 {index + 1}
               </PaginationLink>

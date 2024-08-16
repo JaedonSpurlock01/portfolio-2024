@@ -6,12 +6,21 @@ import "@/styles/mdx.css";
 import { Metadata } from "next";
 import { Tag } from "@/components/ui/tag";
 import { data } from "@/lib/data";
-import Hero from "@/components/hero";
 import Comments from "@/components/comments";
 import { formatDate } from "@/lib/utils";
 import { MdComment } from "react-icons/md";
 import { FaComment } from "react-icons/fa";
 import { Fragment } from "react";
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
 interface PostPageProps {
   params: {
     slug: string[];
@@ -78,8 +87,29 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <main className="page-layout">
-      <Hero />
+    <main className="page-layout w-full h-full items-center">
+      <div className="max-content-width">
+        <Breadcrumb className="w-full items-start">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Portfolio</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/blog">Blog</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink
+                href={`/blog/${post.slug.split("/")[1]}`}
+                className="text-primary"
+              >
+                {post.slug.split("/")[1]}
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <article className="max-content-width py-6 prose dark:prose-invert prose-code:before:hidden prose-code:after:hidden">
         <h1 className="text-3xl font-semibold text-foreground mb-2">
           {post.title}
